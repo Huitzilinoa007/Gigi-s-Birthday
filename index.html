@@ -1,0 +1,746 @@
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ✅ BOOTSTRAP 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Feliz cumpleaños, 𝑮𝒊𝒈𝒊</title>
+  </head>
+  <body>
+    <h1 id="title">¡Pide un deseo, hermosa!</h1>
+
+    <div class="cake-wrapper" id="cake">
+      <!-- TIER 3: contiene velas para mantener tu estructura -->
+      <div class="cake-tier tier-3">
+        <div class="candles">
+          <div class="candle" onclick="toggleFlame(this)">
+            <div class="flame"></div>
+          </div>
+          <div class="candle" onclick="toggleFlame(this)">
+            <div class="flame"></div>
+          </div>
+          <div class="candle" onclick="toggleFlame(this)">
+            <div class="flame"></div>
+          </div>
+        </div>
+
+        <!-- cream piped rim -->
+        <div class="cream-rim"></div>
+
+        <!-- sprinkles (manual placement) -->
+        <span
+          class="sprinkle spr-rot-1"
+          style="left: 18%; top: 34%; background: var(--spr1)"
+        ></span>
+        <span
+          class="sprinkle spr-rot-2"
+          style="left: 30%; top: 20%; background: var(--spr2)"
+        ></span>
+        <span
+          class="sprinkle spr-rot-3"
+          style="left: 46%; top: 56%; background: var(--spr3)"
+        ></span>
+        <span
+          class="sprinkle spr-rot-4"
+          style="left: 72%; top: 44%; background: var(--spr4)"
+        ></span>
+        <span
+          class="sprinkle spr-rot-1"
+          style="left: 28%; top: 68%; background: var(--spr5)"
+        ></span>
+        <div class="gloss"></div>
+      </div>
+
+      <div class="cake-tier tier-2">
+        <div class="cream-rim"></div>
+        <span
+          class="sprinkle spr-rot-2"
+          style="left: 14%; top: 32%; background: var(--spr2)"
+        ></span>
+        <span
+          class="sprinkle spr-rot-3"
+          style="left: 40%; top: 18%; background: var(--spr3)"
+        ></span>
+        <span
+          class="sprinkle spr-rot-4"
+          style="left: 70%; top: 52%; background: var(--spr1)"
+        ></span>
+      </div>
+
+      <div class="cake-tier tier-1">
+        <div class="cream-rim"></div>
+        <span
+          class="sprinkle spr-rot-1"
+          style="left: 12%; top: 28%; background: var(--spr4)"
+        ></span>
+        <span
+          class="sprinkle spr-rot-3"
+          style="left: 48%; top: 24%; background: var(--spr5)"
+        ></span>
+        <span
+          class="sprinkle spr-rot-2"
+          style="left: 82%; top: 42%; background: var(--spr2)"
+        ></span>
+      </div>
+    </div>
+
+    <!-- Contenedores para efectos visuales -->
+    <div id="balloons-container"></div>
+    <div id="confetti-container"></div>
+
+    <div id="wish-text">✨ Todos tus deseos se harán realidad, 𝑮𝒊𝒈𝒊 ✨</div>
+
+    <div id="main-page">
+      <!-- Título y subtexto -->
+      <h1 class="birthday-title">Feliz<br /><span>Cumpleaños!</span></h1>
+      <p class="subtitle">❤️ Con mucho amor para ti ❤️</p>
+
+      <div class="cards-container">
+        <div class="card" data-open="page-album">
+          <img src="album.png" alt="Imagen 1" />
+        </div>
+        <div class="card" data-open="page-polaroid">
+          <img src="polaroid.png" alt="Imagen 2" />
+        </div>
+        <div class="card" data-open="page-carta">
+          <img src="carta.png" alt="Imagen 3" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================
+   ✅ SUBPÁGINA 1 — ÁLBUM
+================================ -->
+    <div id="page-album" class="subpage">
+      <button data-close="page-album" class="back-btn">Volver</button>
+
+      <h1 class="album-title">Quienes te amamos con el alma 💖</h1>
+
+      <div id="albumCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- ✅ FOTO 1 -->
+          <div class="carousel-item active">
+            <img
+              src="Fotos Gigi/FamiliaGigi1.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 1"
+            />
+            <div class="carousel-caption d-block">
+              <p>El amor más sincero del mundo está en los ojos de una mamá.</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 2 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi2.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 2"
+            />
+            <div class="carousel-caption d-block">
+              <p>Su abrazo es tu refugio; tu sonrisa, su orgullo. ❤️</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 3 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi3.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>Juntas hacen que cualquier momento sea más especial. 💕</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 4 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi4.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>
+                El mundo es mejor cuando la vida te regala una compañera de
+                aventuras como ella.
+              </p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 5 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi5.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>
+                La felicidad más pura siempre se encuentra en estos momentos
+                juntos.
+              </p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 6 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi6.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>Su compañía es el hogar donde tu corazón siempre regresa.</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 7 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi7.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>
+                Su forma de cuidarte siempre dice más que cualquier palabra.
+              </p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 8 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi8.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>El amor de tía es ese cariño extra que la vida regala.</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 9 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi9.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>Su recuerdo es un lugar donde siempre encontrarás fuerza.</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 10 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi10.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>
+                Entre juegos y abrazos se escriben los mejores recuerdos de su
+                vida.
+              </p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 11 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi11.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>Eres su guía, su soporte y su refugio.</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 12 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi12.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>Su compañía es el hogar donde tu corazón siempre regresa.</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 13 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi13.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>Tu ángel, siempre contigo.</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 14 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi14.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>Sus manos sostienen tus pasos desde siempre.</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 15 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi15.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>Así se ve el amor acompañando cada aventura.</p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 16 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi16.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>
+                Entre motores y emoción, lo más bonito sigue siendo este momento
+                con tu mamá.
+              </p>
+            </div>
+          </div>
+
+          <!-- ✅ FOTO 17 -->
+          <div class="carousel-item">
+            <img
+              src="Fotos Gigi/FamiliaGigi17.jpeg"
+              class="d-block w-100 album-img"
+              alt="Foto 3"
+            />
+            <div class="carousel-caption d-block">
+              <p>Un gran día, un gran recuerdo y la mejor compañía.</p>
+            </div>
+          </div>
+          <!-- ✅ Controles -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#albumCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#albumCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================
+   ✅ SUBPÁGINA 2 — ELLA
+================================ -->
+    <div id="page-polaroid" class="subpage">
+      <button data-close="page-polaroid" class="back-btn">Volver</button>
+      <h1 class="text-center mb-4" style="font-size: 2.8rem">
+        Lo que hace a 𝑮𝒊𝒈𝒊... 𝑮𝒊𝒈𝒊
+      </h1>
+
+      <div class="container pb-5">
+        <div class="row g-4 justify-content-center align-items-start">
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiBaile.png" alt="" />
+              <p class="caption">
+                En cada paso dejas un pedacito de lo que eres, y por eso, cuando
+                bailas, se ve exactamente como eres: auténtica, intensa y llena
+                de vida.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiCarros.png" alt="" />
+              <p class="caption">
+                Amas los carros. Te brillan los ojos con cada motor, cada pista
+                y cada detalle. Es un amor que te nace natural… muy tuyo, muy
+                auténtico, muy real.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiMatcha.png" alt="" />
+              <p class="caption">
+                El matcha es tu pausa favorita, ese sorbo verde que te calma, te
+                abraza y te hace sentir en casa. (Aunque tu familia te haga
+                burla de eso jiji)
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiLibros.png" alt="" />
+              <p class="caption">
+                En cada libro encuentras un mundo nuevo, y te ves tan hermosa
+                perdida en ellos... porque cuando lees, brillas tan lindo.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiPañalera.png" alt="" />
+              <p class="caption">
+                Esa pañalera que llevas con orgullo porque ahí cabe tu mundo.
+                Uno nunca sabe cuando puede ponerse a leer en un Walmart,
+                ¿Verdad, hermosa? jsjs.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiReggeaton.png" alt="" />
+              <p class="caption">
+                Tu amor por el reggaetón viejito es lo más tú que hay. Lo
+                cantas, lo bailas y lo sientes, hasta tu cobija de Wisin y
+                Yandel te delata.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiRizos.jpeg" alt="" />
+              <p class="caption">
+                Tus rizos son parte de ti. Jamás podrías salir sin ellos, y
+                nadie más que tú entiende lo importantes que son. No los
+                presionas, los cuidas y los amas como nadie más podría.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiLuna.png" alt="" />
+              <p class="caption">
+                Tu amor por la luna es único. Cada luna llena haces tu ritual,
+                tan personal y tan tuyo… algo que nadie más podría entender ni
+                compartir, y que es demasiado importante para ti.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiSushi.png" alt="" />
+              <p class="caption">
+                Te encanta el sushi, lo disfrutas como nadie y sueñas con el día
+                en que te traigan una charola gigantesca solo para ti después de
+                tener un hijo.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiiPad.png" alt="" />
+              <p class="caption">
+                Tu iPad siempre va contigo a todos lados para jugar, incluso
+                mientras comes, y es tu aliado perfecto para pasar momentos en
+                familia. No solo es un iPad, es parte de tu día a día y de tu
+                diversión.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/GigiDormir.jpeg" alt="" />
+              <p class="caption">
+                Te encanta dormir y lo haces con tanta facilidad. Luego abrazas
+                a los gordos y te acuestas, dormir tanto y tan tranquilo es tan
+                tú.
+              </p>
+            </div>
+          </div>
+
+          <!-- Repite items según necesites -->
+        </div>
+      </div>
+
+      <h1 class="text-center mb-4" style="font-size: 2.8rem">
+        Ella siendo simplemente ella
+      </h1>
+      <p
+        class="subtitle"
+        style="
+          text-align: justify;
+          margin-left: 20px;
+          margin-right: 20px;
+          margin-bottom: 30px;
+        "
+      >
+        ✨ Tan hermosa como siempre. Tu sonrisa, tus ojos y tu cabello rizado
+        tienen algo que atrae, que calma y que enamora. Eres hermosísima de una
+        forma tan natural que no necesitas esfuerzo para brillar, y cada vez que
+        sonríes, tu personalidad única lo hace aún más espectacular. ✨
+      </p>
+      <div class="container pb-5">
+        <div class="row g-4 justify-content-center align-items-start">
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi2.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi3.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi4.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi5.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi6.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi7.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi8.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi9.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi10.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi11.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi12.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi13.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi15.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi16.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi17.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi18.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi19.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi20.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi21.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi22.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi23.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi24.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi25.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi26.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi27.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi28.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi29.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi30.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center">
+            <div class="gallery-item">
+              <img src="Fotos Gigi/Gigi31.jpeg" alt="" />
+              <p></p>
+            </div>
+          </div>
+
+          <!-- Repite items según necesites -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ================================
+   ✅ SUBPÁGINA 3 — CARTA
+================================ -->
+    <div id="page-carta" class="subpage">
+      <button data-close="page-carta">Volver</button>
+      <h1>Carta</h1>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- ✅ BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
