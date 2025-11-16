@@ -121,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Abrir subpágina
+  // Abrir subpágina
   document.querySelectorAll("[data-open]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const target = document.getElementById(btn.dataset.open);
@@ -133,6 +134,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Mostrar subpágina
         target.classList.add("active");
+
+        // ⭐ SI LA SUBPÁGINA ES "page-carta", MOSTRAR EL MODAL
+        if (btn.dataset.open === "page-carta") {
+          const modal = document.getElementById("modalMama");
+          if (modal) modal.classList.remove("hidden");
+        }
       }, 300);
     });
   });
@@ -155,6 +162,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 300);
     });
   });
+
+  const cerrarModalBtn = document.getElementById("cerrar-modal-mama");
+  const modalMama = document.getElementById("modalMama");
+
+  if (cerrarModalBtn && modalMama) {
+    cerrarModalBtn.addEventListener("click", () => {
+      modalMama.classList.add("hidden");
+    });
+  }
 });
 
 const carrusel = document.getElementById("miCarrusel");

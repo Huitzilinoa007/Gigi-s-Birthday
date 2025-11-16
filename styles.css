@@ -37,6 +37,14 @@ body {
   overflow: hidden;
 }
 
+h1{
+  font-family: "Quicksand", sans-serif;
+}
+
+p{
+  font-family: "Quicksand", sans-serif;
+}
+
 .fade-out {
   opacity: 0;
   transition: opacity 1s ease;
@@ -830,5 +838,192 @@ h1 {
   .gallery-item img {
     max-height: 260px;    /* más pequeñas en móvil */
     object-fit: cover;
+  }
+}
+
+
+
+/* Contenedor general */
+.carta-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;  
+}
+
+#page-carta{
+  overflow: auto;
+  padding: 20px;
+}
+
+/* Papel de carta */
+.carta-paper {
+  background: #fffef9;
+  border: 1px solid #e1d8c9;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #333;
+  position: relative;
+}
+
+/* Textura suave estilo papel */
+.carta-paper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/paper.png');
+  opacity: 0.25;
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+/* Título */
+.carta-title {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+}
+
+/* Firma */
+.firma {
+  margin-top: 2rem;
+  text-align: right;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carta-paper {
+    padding: 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  .carta-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carta-paper {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .carta-title {
+    font-size: 1.8rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Fondo oscuro del modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Oculto */
+.hidden {
+  display: none;
+}
+
+/* Contenedor tipo carta */
+.modal-carta {
+  background: #fffef9;
+  padding: 25px 30px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: 420px;
+
+  border: 2px solid var(--yinmn-blue);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+  font-family: "Georgia", serif;
+  text-align: center;
+  animation: fadeInUp 0.35s ease;
+}
+
+/* Título */
+.modal-titulo {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: var(--yinmn-blue);
+  font-weight: bold;
+}
+
+/* Subtexto */
+.modal-texto {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Texto principal estilo carta */
+.modal-carta-texto {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  padding: 0 5px;
+}
+
+/* Botón */
+.modal-cerrar {
+  background: #274c77;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.modal-cerrar:hover {
+  background: #19324f;
+}
+
+/* Animación */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 380px) {
+  .modal-carta {
+    padding: 20px;
+  }
+
+  .modal-titulo {
+    font-size: 1.5rem;
+  }
+
+  .modal-carta-texto {
+    font-size: 1.3rem;
   }
 }
